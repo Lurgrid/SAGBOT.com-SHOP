@@ -233,7 +233,7 @@
                     }
                 ?>required>
                 <label>Minimum 5 characters and maximum 256 character <span class="imp">(*)</span></label>
-                <textarea from="form" name="desc" placeholder="Description" maxlength="256" minlength="5" <?php
+                <textarea form="form" name="desc" placeholder="Description" maxlength="256" minlength="5" <?php
                     if (!$noinfo && !isset($_POST["desc"])){
                         echo "class=\"red\"";
                     }
@@ -249,7 +249,7 @@
                             echo "class=\"red\"";
                         }
                     ?>required>
-                        <option <?php
+                        <option label="Sell"<?php
                             if (!$noinfo && $_POST["AF"] == "Sell"){
                                 echo "selected";
                             }  
@@ -289,7 +289,7 @@
                     ?>>
                 </div>
                 <label><span class="imp">(*)</span></label>
-                <div id="sb">
+                <div id="sb2">
                     <input type="text" name="address" placeholder="Address" pattern="^.{0,256}$" <?php
                         if (!$noinfo && isset($_POST["address"])){
                             echo "value=\"{$_POST["address"]}\"";
@@ -315,7 +315,7 @@
                     ?>required>
                     <?php
                         foreach ($category as $cat){
-                            echo "<option";
+                            echo "<option value=\"{$cat}\"";
                             if (!$noinfo && $_POST["categorie"] == $cat){
                                 echo " selected";
                             }  

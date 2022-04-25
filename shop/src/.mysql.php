@@ -1,11 +1,11 @@
 <?php
 
-    define("MYSQL_LOG", "");
+    define("MYSQL_LOG", "projetweb");
 
-    define("MYSQL_HOST", "");
+    define("MYSQL_HOST", "localhost");
 
-    define("MYSQL_PWD", "");
+    define("MYSQL_PWD", "UJ]zC_AiFUjOkkUl17");
 
-    define("MYSQL_DB", "");
+    define("MYSQL_DB", "projetweb");
 
 ?>

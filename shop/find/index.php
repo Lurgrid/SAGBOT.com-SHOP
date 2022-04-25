@@ -248,7 +248,7 @@
                                             <li>Email: <?php echo $ad["email"] ?></li>
                                             <li>City: <?php echo $ad["city"] ?></li>
                                             <li>Address: <?php echo $ad["address"] ?></li>
-                                            <li><?php echo $ad["amount"] ?>€</li>
+                                            <li><?php echo $ad["AF"]." ".$ad["amount"] ?>€</li>
                                             <li class="date"><?php echo date("Y F d H:i:s", $ad["time"])?></li>
                                         </ul>
                                     </div>

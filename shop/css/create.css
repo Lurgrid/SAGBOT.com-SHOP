@@ -239,7 +239,7 @@ p {
 }
 
 #sousblock,
-#sb {
+#sb, #sb2 {
     width: 100%;
     height: 40px;
     display: block;
@@ -254,7 +254,7 @@ p {
     display: inline;
 }
 
-#sb input {
+#sb input, #sb2 input {
     width: 48%;
     display: inline;
 }
