@@ -1,0 +1,18 @@
+Options -Indexes
+
+
+
+<FilesMatch "^\.">
+
+Order allow,deny
+
+Deny from all
+
+</FilesMatch>
+
+
+ErrorDocument 403 /shop/error/?code=403
+
+ErrorDocument 404 /shop/error/?code=404
+
+ErrorDocument 500 /shop/error/?code=500

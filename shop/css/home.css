@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'LeBonCoin';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../src/leboncoin.woff') format('woff');
+}
+
+body {
+    margin: 0;
+}
+
+
+/* <!--------- Top Barre Website ---------> */
+
+#logo {
+    font-family: LeBonCoin;
+    font-size: 250%;
+    padding-left: 1%;
+    color: rgb(255, 110, 20);
+    margin: 0;
+    text-decoration: none;
+}
+
+#banner {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+}
+
+#sui {
+    font-family: LeBonCoin;
+    position: absolute;
+    text-decoration: none;
+    right: 1%;
+    float: right;
+    font-size: 150%;
+    color: rgb(255, 110, 20);
+}
+
+#pp {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+#account {
+    font-family: LeBonCoin;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    float: right;
+    font-size: 150%;
+    height: 60px;
+    color: rgb(255, 110, 20);
+    right: 0;
+    transform: translateX(-40px);
+}
+
+#findcreate {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#findcreate #search {
+    align-items: center;
+    display: inline-flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 300px;
+    text-decoration: none;
+}
+
+#findcreate svg {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 7%;
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate p {
+    margin-left: 4%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate button {
+    text-decoration: none;
+    border: 0;
+    margin: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(255, 110, 20);
+}
+
+
+/* <!--------- Top Barre Website ---------> */
