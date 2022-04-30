@@ -251,6 +251,8 @@ body {
     margin-bottom: 50px;
     display: flex;
     align-items: center;
+    border-style: solid;
+    border-color: rgb(65, 131, 215, 0.5);
 }
 
 .adspic {
@@ -273,8 +275,44 @@ body {
 
 .adsssb {
     margin: 0;
-    position: absolute;
+    width: 80%;
+}
+
+.form {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+.form * {
     width: 100%;
+}
+
+.form .edit {
+    top: 25%;
+    position: absolute;
+}
+
+.form .delete {
+    bottom: 25%;
+    position: absolute;
+}
+
+.form * button {
+    background-color: rgb(65, 131, 215);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    height: 40px;
+    padding: 0;
+}
+
+.form .delete button {
+    background-color: rgb(255, 20, 20);
 }
 
 .adsssb * {

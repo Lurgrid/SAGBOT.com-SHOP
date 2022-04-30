@@ -29,6 +29,38 @@ body {
     box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
 }
 
+#sui {
+    font-family: LeBonCoin;
+    position: absolute;
+    text-decoration: none;
+    right: 1%;
+    float: right;
+    font-size: 150%;
+    color: rgb(255, 110, 20);
+}
+
+#pp {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+#account {
+    font-family: LeBonCoin;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    float: right;
+    font-size: 150%;
+    height: 60px;
+    color: rgb(255, 110, 20);
+    right: 0;
+    transform: translateX(-40px);
+}
+
 #findcreate {
     width: auto;
     display: inline-flex;
@@ -67,32 +99,38 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 
+#findcreate button {
+    text-decoration: none;
+    border: 0;
+    margin: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(255, 110, 20);
+}
+
 
 /* <!--- Top Barre Website ---> */
 
-
-/* <!--- Box Connexion Website ---> */
-
-
-/* <!--- Box Connexion Website ---> */
-
-#boxsui {
+#box {
     border-radius: 8px;
     box-shadow: 0 -1px 10px 0 rgb(26 26 26 / 8%), 0 10px 20px 0 rgb(26 26 26 / 12%);
     background-color: white;
-    width: 80%;
-    max-width: 28.5em;
-    /*height: 55%;*/
+    width: 70%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-#boxsui {
-    padding: 2%;
+#box {
+    padding: 1.25%;
 }
 
-#boxsui input {
+#box input {
     background-color: rgba(0, 0, 0, 0.10);
     border-radius: 5px;
     border: 0;
@@ -105,7 +143,7 @@ body {
     height: 40px;
 }
 
-#boxsui button {
+#box button {
     background-color: rgb(65, 131, 215);
     border-radius: 5px;
     color: white;
@@ -115,12 +153,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     display: block;
-    margin-top: 11%;
+    margin-top: 2%;
     width: 100%;
     height: 40px;
 }
 
-#boxsui a {
+#box a {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5%;
@@ -128,7 +166,7 @@ body {
     float: left;
 }
 
-#boxsui #si {
+#box #si {
     background-color: rgb(255, 110, 20);
     border-radius: 5px;
     color: white;
@@ -146,8 +184,9 @@ body {
     align-items: center;
 }
 
-#boxsui input,
-select {
+#box input,
+select,
+textarea {
     background-color: rgba(0, 0, 0, 0.10);
     border-radius: 5px;
     border: 0;
@@ -155,12 +194,17 @@ select {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     display: block;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     width: 100%;
     height: 40px;
 }
 
-#boxsui label {
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+#box label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 70%;
     margin: 0;
@@ -172,10 +216,10 @@ p {
     margin: 0;
 }
 
-#boxsui hr {
-    width: 100%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+#box hr {
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     color: rgba(0, 0, 0, 0.30);
     border-radius: 3%;
     border: unset;
@@ -186,6 +230,91 @@ p {
     border: 2px solid !important;
     border-color: yellow !important;
     background-color: rgba(255, 255, 0, 0.3) !important;
+}
+
+#adspic {
+    width: auto;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+#adsname {
+    font-weight: bold;
+    font-size: 140%;
+    width: 100%;
+    color: black;
+    margin-top: 20px;
+}
+
+#adsdesc {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    overflow-wrap: break-word;
+}
+
+#adsprice {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(255, 110, 20);
+}
+
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#adstime {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.40);
+    margin-right: 50px;
+}
+
+#adsinfo {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 26px;
+}
+
+#return {
+    background-color: rgb(65, 131, 215);
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+    border: 0;
+    margin: 0;
+    margin-top: 20px !important;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #errmsg {
@@ -214,8 +343,11 @@ p {
 #main {
     display: flex;
     align-items: center;
+    height: auto;
     top: 60px;
-    bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: calc(100% - 120px);
     position: absolute;
     width: 100%;
     background-image: url("../src/fond.png");

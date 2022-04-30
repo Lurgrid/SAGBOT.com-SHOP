@@ -36,11 +36,11 @@
         $tokenpass = base64_decode($token);
         openssl_private_decrypt($tokenpass, $tokenpass, $pvtkey);
         $tokenpass = explode(":", $tokenpass);
-        array_pop($tokenpass);
+        $time = array_pop($tokenpass);
         $tokenpass = implode(":", $tokenpass);
 
         $mdp = explode(":", $mdp);
-        $time = array_pop($mdp);
+        array_pop($mdp);
         $mdp = implode(":", $mdp);
 
         $url = explode("/", $_SERVER['PHP_SELF']);
@@ -48,6 +48,9 @@
             array_pop($url);
         }
         $url =implode("/", $url);
+        if ($url == null){
+            $url = "/";
+        }
 
         if ($mdp != $tokenpass	|| time() > ($time + 3600) ){
             $options = array (

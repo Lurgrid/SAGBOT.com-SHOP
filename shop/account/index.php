@@ -15,15 +15,21 @@
 
 <!DOCTYPE html>
 
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../css/account.css">
+    <link rel="shortcut icon" href="../src/lmc/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../src/lmc/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../src/lmc/favicon_48x48.png" sizes="48x48">
+    <link rel="icon" href="../src/lmc/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../src/lmc/favicon_144x144.png" sizes="144x144">
+    <title>My Account</title>
 </head>
 
 <body>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
     <div id="banner">
         <a href="../" id="logo">lemauvaiscoin</a>
         <div id="findcreate">
@@ -38,8 +44,12 @@
             </a>
         </div>
     </div>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
     <div id = "main">
+        <div class="block">
+            <a id="myads" href="../myads/">My Classified Ad's</a>
+        </div>
+        <hr>
         <div class ="block">
             <?php
                 $errpp = false;
@@ -208,7 +218,6 @@
                 <input type="password" placeholder="Actual Password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,64}$" required>
                 <label>Minimum 8 characters, at least 1 letter, 1 number and 1 special character</label>
                 <input type="password" placeholder="New Password" name="npassword" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,64}$" required>
-                <br>
                 <button class="button return" type="submit">Apply</button>
             </form>
         </div>
@@ -238,6 +247,9 @@
                     array_pop($url);
                     array_pop($url);
                     $url = implode("/", $url);
+                    if ($url == null){
+                        $url = "/";
+                    }
                     header("Location: " . $url);
                     exit();
                 }
@@ -264,6 +276,9 @@
                     array_pop($url);
                     array_pop($url);
                     $url = implode("/", $url);
+                    if ($url == null){
+                        $url = "/";
+                    }
                     $options = array (
                         'expires' => 1,
                         'path' => $url,

@@ -10,7 +10,7 @@ body {
 }
 
 
-/* <!--------- Top Barre Website ---------> */
+/* <!--- Top Barre Website ---> */
 
 #logo {
     font-family: LeBonCoin;
@@ -109,8 +109,9 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 10px;
+    color: white;
     background-color: rgb(255, 110, 20);
 }
 
 
-/* <!--------- Top Barre Website ---------> */
+/* <!--- Top Barre Website ---> */

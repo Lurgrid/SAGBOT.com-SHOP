@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../css/forgot.css">
-    <title>LeMauvaisCoin</title>
+    <link rel="shortcut icon" href="../../src/lmc/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../src/lmc/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../../src/lmc/favicon_48x48.png" sizes="48x48">
+    <link rel="icon" href="../../src/lmc/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../../src/lmc/favicon_144x144.png" sizes="144x144">
+    <title>Forgot Password</title>
 </head>
 
 <body>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
     <div id="banner">
         <a href="../../" id="logo">lemauvaiscoin</a>
         <div id="findcreate">
@@ -21,11 +26,11 @@
             </a>
         </div>
     </div>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
 
     <div id="main">
 
-        <!--------- Box loggin Website --------->
+        <!--- Box loggin Website --->
         <div id="boxsui">
             <?php
                 $err = false;
@@ -62,7 +67,7 @@
                     $account = mysqli_fetch_array($res);
                     if ($account["res"] != $_POST["res"]){
                         mysqli_close($connexion);
-                        $err = "Bad response";
+                        $err = "Wrong answer";
                         goto second;
                     }
 
@@ -79,6 +84,9 @@
                         array_pop($url);
                         array_pop($url);
                         $url = implode("/", $url);
+                        if ($url == null){
+                            $url = "/";
+                        }
                         $options = array (
                             'expires' => 0,
                             'path' => $url,
@@ -179,7 +187,7 @@
             <hr>
             <a id="su" href="../">Back</a>
         </div>
-        <!--------- Box loggin Website --------->
+        <!--- Box loggin Website --->
     </div>
 </body>
 

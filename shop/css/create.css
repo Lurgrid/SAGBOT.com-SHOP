@@ -10,7 +10,7 @@ body {
 }
 
 
-/* <!--------- Top Barre Website ---------> */
+/* <!--- Top Barre Website ---> */
 
 #logo {
     font-family: LeBonCoin;
@@ -108,12 +108,13 @@ body {
     cursor: pointer;
     width: 40px;
     height: 40px;
+    color: white;
     border-radius: 10px;
     background-color: rgb(255, 110, 20);
 }
 
 
-/* <!--------- Top Barre Website ---------> */
+/* <!--- Top Barre Website ---> */
 
 #box {
     border-radius: 8px;
@@ -239,7 +240,8 @@ p {
 }
 
 #sousblock,
-#sb, #sb2 {
+#sb,
+#sb2 {
     width: 100%;
     height: 40px;
     display: block;
@@ -254,7 +256,8 @@ p {
     display: inline;
 }
 
-#sb input, #sb2 input {
+#sb input,
+#sb2 input {
     width: 48%;
     display: inline;
 }
@@ -337,7 +340,7 @@ p {
 }
 
 
-/* <!--------- Background Website ---------> */
+/* <!--- Background Website ---> */
 
 #main {
     display: flex;
@@ -353,4 +356,4 @@ p {
 }
 
 
-/* <!--------- Background Website ---------> */
+/* <!--- Background Website ---> */

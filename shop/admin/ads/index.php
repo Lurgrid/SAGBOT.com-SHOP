@@ -1,6 +1,15 @@
 <?php
-    include_once "../src/.token.php";
-    $log = token(realpath("../src/"), 2);
+    include "../../src/.admin_token.php";
+    $log = token(realpath("../../src/"), 2);
+    if (!$log){
+        $url = explode("/", $_SERVER['PHP_SELF']);
+        array_pop($url);
+        array_pop($url);
+        array_push($url, "login/");
+        $url = implode("/", $url);
+        header("Location: " . $url);
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -9,58 +18,78 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../css/find.css">
-    <link rel="shortcut icon" href="../src/lmc/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../src/lmc/favicon_32x32.png" sizes="32x32">
-    <link rel="icon" href="../src/lmc/favicon_48x48.png" sizes="48x48">
-    <link rel="icon" href="../src/lmc/favicon_96x96.png" sizes="96x96">
-    <link rel="icon" href="../src/lmc/favicon_144x144.png" sizes="144x144">
-    <title>Search Page</title>
+    <link rel="stylesheet" type="text/css" href="../../css/myclasads.css">
+    <link rel="shortcut icon" href="../../src/lmc/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../src/lmc/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../../src/lmc/favicon_48x48.png" sizes="48x48">
+    <link rel="icon" href="../../src/lmc/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../../src/lmc/favicon_144x144.png" sizes="144x144">
+    <title>Ads List | Admin Page</title>
+    <style>
+        .delete {
+            bottom: 40% !important;
+            top: 40%; 
+            height: 20%; 
+        }
+    </style>
 </head>
 
 <body>
     <!--- Top Barre Website --->
     <div id="banner">
         <a href="../" id="logo">lemauvaiscoin</a>
-        <div id="findcreate">
-            <form action="../create/">
-                <button type="submit" class="btn">+</button>
-            </form>
-            <a id="search" href="./">
-                <p>Search</p>
-                <svg viewBox="0 0 1024 1024" role="img">
-                    <path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path>
-                </svg>
-            </a>
-        </div>
-        <?php
-            if ($log != false){
-                echo "<a id=\"account\" href=\"../account/\">{$log['name']}";
-                if ($log["img"] == NULL){
-                    echo "<img id=\"pp\" alt=\"pp\" src=\"../src/img.jpg\">";
-                }else {
-                    echo "<img id=\"pp\" alt=\"pp\" src=\"{$log["img"]}\">";
-                }
-                echo "</a>";
-            }else{
-                echo "<a id=\"sui\" href=\"../login/\">Sign Up / Sign In</a>";
-            }
-        ?>
+        <a id="account" href="../account/">Admin</a>
     </div>
     <!--- Top Barre Website --->
 
     <div id="searchbanner">
         <div id="boxsui">
             <?php
-                $err = false;
-                $ads = array();
-                include_once "../src/.mysql.php";
+                $errads = false;
+                if (isset($_POST["id"], $_POST["mode"])){
+                    if ($_POST["mode"] != "delete"){
+                        $errads = "Invalid Mode";
+                        goto start;
+                    }
+                    if (intval($_POST["id"]) < 1){
+                        $errads = "Invalid ID";
+                        goto start;
+                    }
+                    include_once "../../src/.mysql.php";
+                    try {
+                        $connexion = mysqli_connect(MYSQL_HOST, MYSQL_LOG, MYSQL_PWD, MYSQL_DB);
+                    } catch (Exception $e){
+                        $errads = "Error during server connection";
+                        goto end;
+                    }
+                    $res = mysqli_query($connexion, "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'classified'");
+                    if (mysqli_num_rows($res) == 0){
+                        $errads = "Unknow Ad";
+                        goto end;
+                    }
+                    $res = mysqli_query($connexion, "SELECT * FROM classified WHERE id = '{$_POST["id"]}'");
+                    if (mysqli_num_rows($res) == 0){
+                        $errads = "Unkown Ad";
+                        goto already;
+                    }
+
+                    $res = mysqli_query($connexion, "DELETE FROM classified WHERE id = '{$_POST["id"]}'");
+                    if (mysqli_errno($connexion)){
+                        $errads = "Processing Error, Try later";
+                        goto already;
+                    }
+                }
+                start:
+                include_once "../../src/.mysql.php";
                 try {
                     $connexion = mysqli_connect(MYSQL_HOST, MYSQL_LOG, MYSQL_PWD, MYSQL_DB);
                 } catch (Exception $e){
                     $err = "Error during server connection";
                     goto end;
                 }
+                already:
+                $err = false;
+                $ads = array();
                 if (mysqli_connect_error() != null){
                     $err = "Error during server connection";
                     goto end;
@@ -106,7 +135,7 @@
                     }
                     $query["amount"] = $_GET["amount"];
                 }
-                include_once "../src/.config.php";
+                include_once "../../src/.config.php";
                 if (isset($_GET["category"]) && $_GET["category"] != null ){
                     if (!in_array($_GET["category"], $category)){
                         unset($_GET["category"]);
@@ -185,7 +214,7 @@
                             }  
                         ?>>Buy</option>
                     </select>
-                    <input name="name" type="text" placeholder="Classified Ad Name" pattern="[A-Za-z0-9^\s][A-Za-z0-9\s]{0,63}[A-Za-z0-9^\s]" <?php
+                    <input name="name" type="text" placeholder="Your Ad's Name" pattern="[A-Za-z0-9^\s][A-Za-z0-9\s]{0,63}[A-Za-z0-9^\s]" <?php
                         if (isset($_GET["name"])){
                             echo "value=\"{$_GET["name"]}\"";
                         }
@@ -201,7 +230,7 @@
                     <select id="category" name="category">
                         <option value="">Category</option>
                         <?php
-                            include_once "../src/.config.php";
+                            include_once "../../src/.config.php";
                             foreach ($category as $cat){
                                 echo "<option";
                                 if (isset($_GET["category"]) && $_GET["category"] == $cat){
@@ -237,6 +266,9 @@
     <div id="adsbanner">
         <div id="ads">
             <?php
+                if ($errads != false){
+                    echo "<p id=\"errmsg\">".$errads."</p>";
+                }
                 if (count($ads) == 0){
                     ?>
                     <p id="noting">Sorry, we have no results!</p>
@@ -245,10 +277,10 @@
                     foreach ($ads as $key => $ad){
                         ?>
                             <div class="ad">
-                                <img class="adspic" alt="ad picture" src="<?php echo ($ad["img"] == null)?"../src/clasads.jpg":$ad["img"];?>">
+                                <img class="adspic" alt="ad picture" src="<?php echo ($ad["img"] == null)?"../../src/clasads.jpg":$ad["img"];?>">
                                 <div class="adssb">
                                     <div class="adsssb">
-                                        <p class="adsname" ><a href="../ads?id=<?php echo $ad["id"] ?>"><?php echo $ad["name"]?></a></p>
+                                        <p class="adsname" ><a href="../../ads?id=<?php echo $ad["id"] ?>"><?php echo $ad["name"]?></a></p>
                                         <ul>
                                             <li>Phone: <?php echo $ad["tel"] ?></li>
                                             <li>Email: <?php echo $ad["email"] ?></li>
@@ -257,6 +289,13 @@
                                             <li><?php echo "<span>".$ad["AF"]."</span> ".$ad["amount"] ?>€</li>
                                             <li class="date"><?php echo date("Y F d H:i:s", $ad["time"])?></li>
                                         </ul>
+                                    </div>
+                                    <div class="form">
+                                        <form class="delete" action="./" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $ad["id"] ?>">
+                                            <input type="hidden" name="mode" value="delete">
+                                            <button type="submit">Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

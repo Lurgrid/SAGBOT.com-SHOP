@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <title>LeMauvaisCoin</title>
+    <link rel="shortcut icon" href="../src/lmc/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../src/lmc/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" href="../src/lmc/favicon_48x48.png" sizes="48x48">
+    <link rel="icon" href="../src/lmc/favicon_96x96.png" sizes="96x96">
+    <link rel="icon" href="../src/lmc/favicon_144x144.png" sizes="144x144">
+    <title>Log in Page</title>
 </head>
 
 <body>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
     <div id="banner">
         <a href="../" id="logo">lemauvaiscoin</a>
         <div id="findcreate">
@@ -21,7 +26,7 @@
             </a>
         </div>
     </div>
-    <!--------- Top Barre Website --------->
+    <!--- Top Barre Website --->
 
     <div id="main">
         <?php
@@ -50,7 +55,7 @@
             $res = mysqli_query($connexion, "SELECT * FROM account WHERE email = '{$_POST["email"]}';");
             if (mysqli_num_rows($res) == 0){
                 mysqli_close($connexion);
-                $err = "Bad Email/Password";
+                $err = "Wrong Email/Password";
                 goto end;
             }
             $account = mysqli_fetch_array($res);
@@ -64,7 +69,7 @@
             array_pop($mdp);
             $mdp = implode(":", $mdp);
             if ($mdp != $_POST["email"].":".$_POST["password"]){
-                $err = "Bad Email/Password."; 
+                $err = "Wrong Email/Password."; 
                 goto end;
             }
 
@@ -83,6 +88,9 @@
             array_pop($url);
             array_pop($url);
             $url =implode("/", $url);
+            if ($url == null){
+                $url = "/";
+            }
             $options = array (
                 'expires' => 0,
                 'path' => $url,
@@ -100,7 +108,7 @@
             end:
         ?>
 
-        <!--------- Box loggin Website --------->
+        <!--- Box loggin Website --->
         <div id="boxsui">
             <form action="./" method="post">
                 <?php 
@@ -115,7 +123,7 @@
             </form>
             <a id="su" href="../signup/">Sign Up</a>
         </div>
-        <!--------- Box loggin Website --------->
+        <!--- Box loggin Website --->
     </div>
 </body>
 
