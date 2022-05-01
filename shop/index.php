@@ -49,6 +49,80 @@
     </div>
     <!--- Top Barre Website --->
 
+    <div id="searchbanner">
+            <div id="boxsui">
+                <form id="formsearch" action="./find" method="get">          
+                    <div id="first">
+                        <select name="AF">
+                            <option value="">Sell/Buy</option>
+                            <option>Sell</option>
+                            <option>Buy</option>
+                        </select>
+                        <input name="name" type="text" placeholder="Your Ad's Name" pattern="[A-Za-z0-9^\s][A-Za-z0-9\s]{0,63}[A-Za-z0-9^\s]">              
+                        <button type="submit">Search</button>
+                    </div>
+                    <div id="second">
+                        <input name="city" id="city" type="text" placeholder="City" pattern="^.{0,128}$">
+                        <select id="category" name="category">
+                            <option value="">Category</option>
+                                <?php
+                                    include_once "../src/.config.php";
+                                    foreach ($category as $cat){
+                                        echo "<option>{$cat}</option>";
+                                        }
+                                ?>                 
+                        </select>
+                        <input name="amount" id="amont" type="number" min="0" max="999999999" placeholder="333€">
+                        <select name="selector" id="selector">
+                            <option value="">=</option>
+                                <?php
+                                    $selectors = [">", "<"];
+                                    foreach ($selectors as $select){
+                                        echo "<option>{$select}</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="info">
+            <div class="sb">
+                <h2>Create a Account</h2>
+                <p>
+                    To create an account on our platform just click on the left on <a class="sui" href="./login/">Sign Up / Sign In</a>. <br>
+                    Once you click on it, you must complete the form with your various information. <br> Attention the security question and the only way to recover your account if you forgot your password and you could never change the answer then, thank you to complete the field
+                </p>
+            </div>
+            <div class="sb">
+                <h2>Login to your account</h2>
+                <p>
+                    To login to your account you must click on <a class="sui" href="./login/">Sign Up / Sign In</a>. <br>
+                    Once on the page you must fill in your email and password. <br> 
+                    If you have forgotten your password you must click on <a class="forgot" href="./login/forgot/">Forgot Password</a> <br>
+                    Then you must enter your email, then you will be asked the answer to your security question, once answered you can enter a new password
+                </p>
+            </div>
+            <div class="sb">
+                <h2>Edit/Delete your account</h2>
+                <p>
+                    Once connected you must click on  <a class="account" href="./account/">Your Name <img class="pp" alt="pp" src="./src/img.jpg"> </a> <br>
+                    Once on the page, the first button at the top will allow you to modify / delete your published ads <br>
+                    The 3 forms above will allow you to change your profile picture / account names / password <br>
+                    The second last button will allow you to delete your account and all your ads <br>
+                    The last button will allow you to disconnect
+                </p>
+            </div>
+            <div class="sb">
+                <h2>Create an ad/View ads</h2>
+                <p>
+                    To create an ad you must be connected and you must click on <span ><a class="button" href="./create">+</a></span> <br>
+                    Once on this page you must complete the form <br>
+                    To see all the ads you have to click on the search bar, once on the search page you can do custom searches
+                </p>
+            </div>
+        </div>
+
 
 </body>
 

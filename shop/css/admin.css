@@ -91,6 +91,9 @@
 }
 
 #searchbanner {
+    background: unset !important;
+    top: unset;
+    border: unset;
     display: flex;
     align-items: center;
     /*bottom: 0;*/
