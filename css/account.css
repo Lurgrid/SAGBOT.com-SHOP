@@ -1,0 +1,333 @@
+@font-face {
+    font-family: 'LeBonCoin';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../src/leboncoin.woff') format('woff');
+}
+
+body {
+    margin: 0;
+}
+
+
+/*  */
+
+#logo {
+    font-family: LeBonCoin;
+    font-size: 250%;
+    padding-left: 1%;
+    color: rgb(255, 110, 20);
+    margin: 0;
+    text-decoration: none;
+}
+
+#banner {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+}
+
+#sui {
+    font-family: LeBonCoin;
+    position: absolute;
+    text-decoration: none;
+    right: 1%;
+    float: right;
+    font-size: 150%;
+    color: rgb(255, 110, 20);
+}
+
+#account {
+    font-family: LeBonCoin;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    float: right;
+    font-size: 150%;
+    height: 60px;
+    color: rgb(255, 110, 20);
+    right: 0;
+    transform: translateX(-40px);
+}
+
+#findcreate {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#findcreate #search {
+    align-items: center;
+    display: inline-flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 300px;
+    text-decoration: none;
+}
+
+#findcreate svg {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 7%;
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate p {
+    margin-left: 4%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate button {
+    text-decoration: none;
+    border: 0;
+    margin: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(255, 110, 20);
+}
+
+
+/*  */
+
+.block {
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 0;
+    /*25px;*/
+}
+
+#pp {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 50%), 0 4px 8px 0 rgb(26 26 26 / 50%);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#myads {
+    background-color: rgb(255, 110, 20);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    height: 40px;
+    width: 33%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sousblock {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.sousblock * {
+    display: inline-block;
+    margin: 10px;
+    margin-top: 1px;
+}
+
+#upload {
+    background-color: rgb(255, 110, 20);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    height: 40px;
+    width: 33%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.button {
+    background-color: rgb(65, 131, 215);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    height: 40px;
+    width: 33%;
+    padding: 0;
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-bottom: 10%;
+    width: 50%;
+    height: 40px;
+    padding: 0;
+}
+
+hr {
+    width: 80%;
+    color: rgba(0, 0, 0, 0.30);
+    border-radius: 3%;
+    border: unset;
+    border-top: 2px solid;
+}
+
+.errmsg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: red;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    margin: 0;
+}
+
+#name {
+    color: rgb(255, 110, 20);
+    font-family: LeBonCoin;
+    font-size: 150%;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 5px
+}
+
+.password {
+    display: unset;
+    margin-top: 10px;
+}
+
+.password button {
+    margin-top: 20px;
+}
+
+.password input {
+    width: 80%;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70%;
+    margin: 0;
+}
+
+.validmsg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(65, 131, 215);
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(65, 131, 215, 0.2);
+}
+
+.deleteacc {
+    display: unset;
+}
+
+.deleteacc button {
+    background-color: rgb(255, 20, 20);
+    width: 70%;
+    margin-bottom: 0;
+}
+
+.deleteacc label {
+    font-size: 100%;
+    width: 70%;
+}
+
+.discacc button {
+    background-color: unset;
+    border-color: rgb(255, 20, 20);
+    border-width: 2px;
+    border-style: solid;
+    color: rgb(255, 20, 20);
+    width: 70%;
+}
+
+.discacc {
+    margin-top: 0;
+}

@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'LeBonCoin';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../src/leboncoin.woff') format('woff');
+}
+
+body {
+    margin: 0;
+}
+
+
+/*  */
+
+#logo {
+    font-family: LeBonCoin;
+    font-size: 250%;
+    padding-left: 1%;
+    color: rgb(255, 110, 20);
+    margin: 0;
+    text-decoration: none;
+}
+
+#banner {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 4px 0 rgb(26 26 26 / 8%), 0 4px 8px 0 rgb(26 26 26 / 12%);
+}
+
+#sui {
+    font-family: LeBonCoin;
+    position: absolute;
+    text-decoration: none;
+    right: 1%;
+    float: right;
+    font-size: 150%;
+    color: rgb(255, 110, 20);
+}
+
+#pp {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+#account {
+    font-family: LeBonCoin;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    float: right;
+    font-size: 150%;
+    height: 60px;
+    color: rgb(255, 110, 20);
+    right: 0;
+    transform: translateX(-40px);
+}
+
+#findcreate {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#findcreate #search {
+    align-items: center;
+    display: inline-flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 300px;
+    text-decoration: none;
+}
+
+#findcreate svg {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 7%;
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate p {
+    margin-left: 4%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#findcreate button {
+    text-decoration: none;
+    border: 0;
+    margin: 0.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(255, 110, 20);
+}
+
+
+/*  */
+
+#box {
+    border-radius: 8px;
+    box-shadow: 0 -1px 10px 0 rgb(26 26 26 / 8%), 0 10px 20px 0 rgb(26 26 26 / 12%);
+    background-color: white;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#box {
+    padding: 1.25%;
+}
+
+#box input {
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-bottom: 10%;
+    width: 100%;
+    height: 40px;
+}
+
+#box button {
+    background-color: rgb(65, 131, 215);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-top: 2%;
+    width: 100%;
+    height: 40px;
+}
+
+#box a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5%;
+    color: black;
+    float: left;
+}
+
+#box #si {
+    background-color: rgb(255, 110, 20);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    margin: 0;
+    margin-top: 1%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box input,
+select,
+textarea {
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 40px;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+#box label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70%;
+    margin: 0;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    margin: 0;
+}
+
+#box hr {
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: rgba(0, 0, 0, 0.30);
+    border-radius: 3%;
+    border: unset;
+    border-top: 2px solid;
+}
+
+.red {
+    border: 2px solid !important;
+    border-color: yellow !important;
+    background-color: rgba(255, 255, 0, 0.3) !important;
+}
+
+#adspic {
+    width: auto;
+    height: 300px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+#adsname {
+    font-weight: bold;
+    font-size: 140%;
+    width: 100%;
+    color: black;
+    margin-top: 20px;
+}
+
+#adsdesc {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    overflow-wrap: break-word;
+}
+
+#adsprice {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(255, 110, 20);
+}
+
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#adstime {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.40);
+    margin-right: 50px;
+}
+
+#adsinfo {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 26px;
+}
+
+#return {
+    background-color: rgb(65, 131, 215);
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+    border: 0;
+    margin: 0;
+    margin-top: 20px !important;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#errmsg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: red;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 150%;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+
+/* <!--- Background Website ---> */
+
+#main {
+    display: flex;
+    align-items: center;
+    height: auto;
+    top: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: calc(100% - 120px);
+    position: absolute;
+    width: 100%;
+    background-image: url("../src/fond.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 1400px;
+}
+
+
+/* <!--- Background Website ---> */
